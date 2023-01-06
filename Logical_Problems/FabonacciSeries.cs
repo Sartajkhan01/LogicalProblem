@@ -7,20 +7,30 @@ using System.Threading.Tasks;
 namespace Logical_Problems
 {
 
-    public class ReverseNumber
+    public class CouponNumber
     {
-        int num, rev = 0, rem;
-        public void ReverseNum()
+        public void Coupon()
         {
-            Console.WriteLine("Enter any number to reverse : ");
-            num = Convert.ToInt32(Console.ReadLine());
-            while (num != 0)
+            int unique = 0, count = 0, coupon;
+            Console.WriteLine("Enter the number :");
+            coupon = Convert.ToInt32(Console.ReadLine());
+            bool[] listOfCoupons = new bool[coupon];
+            while (unique < coupon)
             {
-                rem = num % 10;
-                rev = rev * 10 + rem;
-                num = num / 10;
+                Random random = new Random();
+                int option = random.Next(1, 100);
+                int newCoupon = (int)(random.NextDouble() * coupon);
+                count++;
+
+                if (!listOfCoupons[newCoupon])
+                {
+                    unique++;
+                    listOfCoupons[newCoupon] = true;
+                }
             }
-            Console.WriteLine("Reverse of the given number is :" + rev);
+            Console.WriteLine("Random numbers needed to have all distinct coupons : " + count);
+
+
         }
     }
 }

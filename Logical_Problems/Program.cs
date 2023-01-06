@@ -34,6 +34,10 @@ namespace Logical_Problems
                         reverse.ReverseNum();
                         break;
                     case 5:
+                        CouponNumber couponNumber = new CouponNumber();
+                        couponNumber.Coupon();
+                        break;
+                    case 6:
                         end = false;
                         break;
                     default:
