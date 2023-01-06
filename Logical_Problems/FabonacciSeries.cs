@@ -7,30 +7,19 @@ using System.Threading.Tasks;
 namespace Logical_Problems
 {
 
-    public class CouponNumber
+    public class StopWatchProblem
     {
-        public void Coupon()
+        public void StopWatch()
         {
-            int unique = 0, count = 0, coupon;
-            Console.WriteLine("Enter the number :");
-            coupon = Convert.ToInt32(Console.ReadLine());
-            bool[] listOfCoupons = new bool[coupon];
-            while (unique < coupon)
-            {
-                Random random = new Random();
-                int option = random.Next(1, 100);
-                int newCoupon = (int)(random.NextDouble() * coupon);
-                count++;
+            Console.WriteLine("press Enter to start");
+            Console.ReadLine();
+            DateTime Start = DateTime.Now;
 
-                if (!listOfCoupons[newCoupon])
-                {
-                    unique++;
-                    listOfCoupons[newCoupon] = true;
-                }
-            }
-            Console.WriteLine("Random numbers needed to have all distinct coupons : " + count);
+            Console.WriteLine("press Enter to stop.");
+            Console.ReadLine();
+            DateTime Stop = DateTime.Now;
 
-
+            Console.WriteLine("Elapsed Time =" + (Stop - Start));
         }
     }
 }

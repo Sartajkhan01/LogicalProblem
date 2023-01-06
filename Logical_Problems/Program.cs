@@ -38,6 +38,10 @@ namespace Logical_Problems
                         couponNumber.Coupon();
                         break;
                     case 6:
+                        StopWatchProblem stopWatchProblem = new StopWatchProblem();
+                        stopWatchProblem.StopWatch();
+                        break;
+                    case 7:
                         end = false;
                         break;
                     default:
