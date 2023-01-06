@@ -6,29 +6,27 @@ using System.Threading.Tasks;
 
 namespace Logical_Problems
 {
-    public class PerfectNumber
+    public class PrimeNumber
     {
-        public void PerfectNum()
+        public void CheckingPrime()
         {
-            int i, num, sum = 0;
-            Console.WriteLine("Enter the number you want to check: ");
+            int num, i, k = 0;
+            Console.WriteLine("Enter number for Prime Check : ");
             num = Convert.ToInt32(Console.ReadLine());
-
-            for (i = 1; i < num; i++)
+            for (i = 2; i < num / 2; i++)
             {
                 if (num % i == 0)
                 {
-                    sum = sum + i;
+                    Console.WriteLine("The given number is not Prime");
+                    k = 1;
+                    break;
                 }
             }
-            if (sum == num)
+            if (k == 0)
             {
-                Console.WriteLine("The given number is a Perfect Number");
+                Console.WriteLine("The given number is Prime");
             }
-            else
-            {
-                Console.WriteLine("The given number is not a Perfect Number");
-            }
+
         }
     }
 }
